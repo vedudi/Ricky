@@ -1,14 +1,8 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
-
-const routes = () => {
-  return (
-    <View>
-      <Text>routes</Text>
-    </View>
-  );
-};
-
-export default routes;
-
-const styles = StyleSheet.create({});
+export const CHARACTERS = 'CHARACTERS';
+export const EPISODES = 'EPISODES';
+export const LOCATIONS = 'LOCATIONS';
+export const SETTINGS = 'SETTINGS';
+export const TABNAVIGATOR = 'TABNAVIGATOR';
+export const CHARACTERDETAIL = 'CHARACTERDETAIL';
+export const FILTERCHARACTERS = 'FILTERCHARACTERS';
+export const SEARCHCHARACTERS = 'SEARCHCHARACTERS';

@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-const characterDetail = () => {
+const CharacterDetail = () => {
   return (
     <View>
       <Text>characterDetail</Text>
@@ -9,6 +9,6 @@ const characterDetail = () => {
   );
 };
 
-export default characterDetail;
+export default CharacterDetail;
 
 const styles = StyleSheet.create({});
