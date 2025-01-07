@@ -1,14 +1,3 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
 
-const urls = () => {
-  return (
-    <View>
-      <Text>urls</Text>
-    </View>
-  );
-};
-
-export default urls;
-
-const styles = StyleSheet.create({});
+export const BASE_URL = 'https://rickandmortyapi.com/api/';
+export const CHARACTERS_URL = 'character';

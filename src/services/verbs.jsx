@@ -1,14 +1,6 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import axiosClient from './instance';
 
-const verbs = () => {
-  return (
-    <View>
-      <Text>verbs</Text>
-    </View>
-  );
-};
-
-export default verbs;
-
-const styles = StyleSheet.create({});
+export async function getRequest(URL, params) {
+  const response = axiosClient.get(`${URL}`, {params: params});
+  return response;
+}

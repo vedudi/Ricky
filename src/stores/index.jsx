@@ -1,14 +1,6 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import {applyMiddleware, createStore} from 'redux';
+import rootReducer from './reducers';
+import {thunk} from 'redux-thunk';
 
-const index = () => {
-  return (
-    <View>
-      <Text>index</Text>
-    </View>
-  );
-};
-
-export default index;
-
-const styles = StyleSheet.create({});
+const store = createStore(rootReducer, applyMiddleware(thunk));
+export default store;

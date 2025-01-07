@@ -1,14 +1,11 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import {StyleSheet} from 'react-native';
+import Colors from '../themes/Colors';
 
-const screenStyle = () => {
-  return (
-    <View>
-      <Text>screenStyle</Text>
-    </View>
-  );
-};
-
-export default screenStyle;
-
-const styles = StyleSheet.create({});
+const ScreenStyle = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 10,
+    backgroundColor: Colors.BACKGROUNDCOLOR,
+  },
+});
+export default ScreenStyle;

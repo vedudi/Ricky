@@ -1,14 +1,22 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import {CHARACTERS_URL} from '../../services/urls';
+import {getRequest} from '../../services/verbs';
+import {
+  CHARACTERS_REJECT,
+  FETCH_CHARACTERS,
+  PENDING_CHARACTERS,
+} from '../types/characterTypes';
 
-const f = () => {
-  return (
-    <View>
-      <Text>f</Text>
-    </View>
-  )
-}
-
-export default f
-
-const styles = StyleSheet.create({})
+export const getCharacterList = params => {
+  return async dispatch => {
+    dispatch({type: PENDING_CHARACTERS});
+    try {
+      const response = await getRequest(CHARACTERS_URL, params);
+      dispatch({
+        type: FETCH_CHARACTERS,
+        payload: response.data.results,
+      });
+    } catch (error) {
+      dispatch({type: CHARACTERS_REJECT, error: error});
+    }
+  };
+};

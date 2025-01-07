@@ -1,14 +1,7 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
-
-const characterTypes = () => {
-  return (
-    <View>
-      <Text>characterTypes</Text>
-    </View>
-  );
-};
-
-export default characterTypes;
-
-const styles = StyleSheet.create({});
+export const FETCH_CHARACTERS = 'FETCH_CHARACTERS';
+export const PENDING_CHARACTERS = 'PENDING_CHARACTERS';
+export const CHARACTERS_REJECT = 'CHARACTERS_REJECT';
+export const FETCH_SINGLECHARACTER = 'FETCH_SINGLECHARACTER';
+export const PENDING_SINGLECHARACTER = 'PENDING_SINGLECHARACTER';
+export const SINGLECHARACTER_REJECT = 'SINGLECHARACTER_REJECT';
+export const CHANGE_PARAMS = 'CHANGE_PARAMS';

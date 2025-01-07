@@ -1,14 +1,54 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
-
-const constants = () => {
-  return (
-    <View>
-      <Text>constants</Text>
-    </View>
-  );
+const genderTypes = {
+  MALE: 'Male',
+  FEMALE: 'Female',
+  UNKNOWN: 'unknown',
 };
 
-export default constants;
+const statusTypes = {
+  ALIVE: 'Alive',
+  DEAD: 'Dead',
+  UNKNOWN: 'unknown',
+};
 
-const styles = StyleSheet.create({});
+const genders = [
+  {
+    id: 1,
+    name: 'Male',
+    value: 'male',
+  },
+  {
+    id: 2,
+    name: 'Female',
+    value: 'female',
+  },
+  {
+    id: 3,
+    name: 'Genderless',
+    value: 'genderless',
+  },
+  {
+    id: 4,
+    name: 'Unknown',
+    value: 'unknown',
+  },
+];
+
+const status = [
+  {
+    id: 1,
+    name: 'Alive',
+    value: 'alive',
+  },
+  {
+    id: 2,
+    name: 'Dead',
+    value: 'dead',
+  },
+  {
+    id: 3,
+    name: 'Unknown',
+    value: 'unknown',
+  },
+];
+
+export {genderTypes, statusTypes, genders, status};
