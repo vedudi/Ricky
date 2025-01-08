@@ -3,13 +3,19 @@ import React from 'react';
 import {
   CHARACTERS_REJECT,
   FETCH_CHARACTERS,
+  FETCH_SINGLECHARACTER,
   PENDING_CHARACTERS,
+  PENDING_SINGLECHARACTER,
+  SINGLECHARACTER_REJECT,
 } from '../types/characterTypes';
 
 const initialState = {
   characterList: [],
   pending: false,
   error: null,
+  singleCharacter: [],
+  pendingSingleCharacter: true,
+  errorSingleCharacter: null,
   params: {
     page: 1,
     status: null,
@@ -37,6 +43,23 @@ const CharactersReducer = (state = initialState, action) => {
         error: action.error,
         pending: false,
       };
+    case PENDING_SINGLECHARACTER:
+      return {
+        ...state,
+        pendingSingleCharacter: true,
+      };
+    case FETCH_SINGLECHARACTER:
+      return {
+        ...state,
+        singleCharacter: action.payload,
+        pendingSingleCharacter: false,
+      };
+    case SINGLECHARACTER_REJECT:
+      return {
+        ...state,
+        errorSingleCharacter: action.error,
+      };
+
     default:
       return state;
   }
