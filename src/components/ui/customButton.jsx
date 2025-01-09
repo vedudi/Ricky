@@ -1,12 +1,15 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import Colors from '../../themes/Colors';
 
-const CustomButton = () => {
+const CustomButton = props => {
+  const {backColor, title, titleColor = Colors.BLACK} = props;
   return (
-    <View>
-      <Text>CustomButton</Text>
-    </View>
+    <TouchableOpacity
+      {...props}
+      style={[styles.container, {backgroundColor: backColor}]}>
+      <Text style={[styles.title, {color: titleColor}]}>{title}</Text>
+    </TouchableOpacity>
   );
 };
 

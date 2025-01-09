@@ -101,7 +101,7 @@ const CharacterDetail = ({route}) => {
             </Text>
             <View style={CharacterDetailStyle.rowContainer}>
               <View style={CharacterDetailStyle.infoContainer}>
-                <Text>Origin</Text>
+                <Text>Created</Text>
               </View>
               <View style={CharacterDetailStyle.infoBox}>
                 <Text>{singleCharacter.created}</Text>

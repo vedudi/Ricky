@@ -29,9 +29,9 @@ const TabNavigator = () => {
         headerRight: prop => <HeaderRight />,
       })}>
       <Tab.Screen name={CHARACTERS} component={Characters} />
-      <Tab.Screen name={EPISODES} component={Episodes} />
-      <Tab.Screen name={LOCATIONS} component={Locations} />
-      <Tab.Screen name={SETTINGS} component={Settings} />
+      {/* <Tab.Screen name={EPISODES} component={Episodes} /> */}
+      {/* <Tab.Screen name={LOCATIONS} component={Locations} /> */}
+      {/* <Tab.Screen name={SETTINGS} component={Settings} /> */}
     </Tab.Navigator>
   );
 };

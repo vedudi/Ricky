@@ -1,6 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {
+  CHANGE_PARAMS,
   CHARACTERS_REJECT,
   FETCH_CHARACTERS,
   FETCH_SINGLECHARACTER,
@@ -60,6 +61,14 @@ const CharactersReducer = (state = initialState, action) => {
         errorSingleCharacter: action.error,
       };
 
+    case CHANGE_PARAMS:
+      return {
+        ...state,
+        params: {
+          ...state.params,
+          ...action.params,
+        },
+      };
     default:
       return state;
   }

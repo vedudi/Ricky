@@ -1,18 +1,34 @@
 import {FlatList, StyleSheet, Text, TextInput, View} from 'react-native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import CustomButton from '../../components/ui/CustomButton';
 import Colors from '../../themes/Colors';
 import ScreenStyle from '../../styles/ScreenStyle';
-import SearchItem from '../../components/characters/searchItem';
+import SearchItem from '../../components/characters/SearchItem';
+import {useDispatch, useSelector} from 'react-redux';
+import {
+  changeParams,
+  getCharacterList,
+} from '../../stores/actions/CharactersActions';
 
 const SearchCharacters = () => {
+  const dispatch = useDispatch();
+  const [searchText, setSearchText] = useState('');
+  const {characterList, pending, params} = useSelector(
+    state => state.characters,
+  );
+  useEffect(() => {
+    dispatch(getCharacterList(params));
+  }, []);
+  const handleSubmit = () => {
+    dispatch(changeParams({name: searchText}));
+  };
   const ListHeaderComponent = () => {
     return (
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
         <TextInput
-          // value={searchText}
+          value={searchText}
           placeholder="Search Character"
-          // onSubmitEditing={handleSubmit}
+          onSubmitEditing={handleSubmit}
           style={{
             width: '95%',
             borderWidth: 0.5,
@@ -22,13 +38,13 @@ const SearchCharacters = () => {
             height: 40,
             borderRadius: 100,
           }}
-          // onChangeText={setSearchText}
+          onChangeText={setSearchText}
         />
         <CustomButton
-        // onPress={() => handleSubmit()}
-        // title="Search"
-        // backColor={Colors.GREEN}
-        // titleColor={Colors.WHITE}
+          onPress={() => handleSubmit()}
+          title="Search"
+          backColor={Colors.GREEN}
+          titleColor={Colors.WHITE}
         />
       </View>
     );
@@ -38,7 +54,7 @@ const SearchCharacters = () => {
     <View style={ScreenStyle.container}>
       <FlatList
         ListHeaderComponent={ListHeaderComponent}
-        // data={characterList}
+        data={characterList}
         renderItem={({item}) => <SearchItem item={item} />}
       />
     </View>
